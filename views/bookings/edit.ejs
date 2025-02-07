@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<script>
+    const booking = <%- JSON.stringify(booking)%> ;
+</script>
+<body>
+    <!-- Booking Form -->
+    <div class="col-8 offset-3 mb-3 booking-form">
+        <hr>
+        <h4>Edit your Booking : </h4>
+        <form method="post" action="/listings/<%= booking.listing._id %>/bookings/<%= booking._id %>?_method=PUT" class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="checkIn" class="form-label">Check-in Date</label>
+                    <input type="date" value="<%= new Date(booking.checkIn).toISOString().split('T')[0] %>" class="form-control" id="checkIn" name="booking[checkIn]" required>
+                    <div class="invalid-feedback">Please select a check-in date.</div>
+                </div>
+                <div class="col">
+                    <label for="checkOut" class="form-label">Check-out Date</label>
+                    <input type="date" value="<%= new Date(booking.checkOut).toISOString().split('T')[0] %>" class="form-control" id="checkOut" name="booking[checkOut]" required>
+                    <div class="invalid-feedback">Please select a check-out date.</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <p>Total Price: &#8377; <span id="totalPrice"><%= booking.totalBookingPrice %></span></p>
+                <!-- Error message for date issues -->
+                <p id="dateError" class="text-danger"></p>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Confirm Booking</button>
+        </form>
+    </div>
+
+    <!-- For Booking Price Calc -->
+    <script src="/js/editPriceCalc.js"></script>
+</body>
