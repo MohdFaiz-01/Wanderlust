@@ -34,8 +34,8 @@ main()
     });
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust_copy");
-    // await mongoose.connect(dbUrl);
+    // await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust_copy");
+    await mongoose.connect(dbUrl);
 }
 
 
@@ -48,17 +48,17 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);  //helps to create layouts & can embedd in ejs
 
 // Storing session info in DB
-// const store = MongoStore.create({
-//     mongoUrl: dbUrl,
-//     crypto: {
-//         secret: process.env.SECRET,
-//     },
-//     touchAfter: 24 * 3600,
-// });
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 3600,
+});
 
-// store.on("error", () => {
-//     console.log("ERROR IN MONGO SESSION STORE", err);
-// });
+store.on("error", () => {
+    console.log("ERROR IN MONGO SESSION STORE", err);
+});
 
 const sessionOptions = {
     secret: process.env.SECRET,
