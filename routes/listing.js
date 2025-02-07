@@ -1,18 +1,10 @@
 const express = require("express");
 const router = express.Router();
-<<<<<<< HEAD
 const wrapAsync = require("../utils/wrapAsync.js");
 const {isLoggedIn, isOwner, validateListing, validateBooking} = require("../middleware.js");
 
 const listingController = require("../controllers/listings.js");  // all routes callbacks(MVC)
 const bookingController = require("../controllers/bookings.js");
-=======
-const Listing = require("../models/listing.js");
-const wrapAsync = require("../utils/wrapAsync.js");
-const {isLoggedIn, isOwner, validateListing} = require("../middleware.js");
-
-const listingController = require("../controllers/listings.js");  // all routes callbacks(MVC)
->>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 
 const multer = require("multer");   // to parse files from create listing form
 const {storage} = require("../cloudConfig.js");  // making connection & storage in cloudinary
@@ -44,11 +36,8 @@ router.put("/:id", isLoggedIn, isOwner, upload.single("listing[image]"), validat
 //Delete Route
 router.delete("/:id", isLoggedIn, isOwner, wrapAsync(listingController.deleteListing));
 
-<<<<<<< HEAD
 // Search Listing Route
 router.post("/search", wrapAsync(listingController.searchListing));
 
-=======
->>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 
 module.exports = router;

@@ -10,10 +10,7 @@ module.exports.listingSchema = Joi.object({
         country: Joi.string().required(),
         price: Joi.number().required().min(0),
         image: Joi.string().allow("", null),
-<<<<<<< HEAD
         category: Joi.string().valid("room", "iconic city", "mountain", "castle", "pool villa", "camp", "farm", "arctic","dome","boat").allow("", null).required(),
-=======
->>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
     }).required(),
 });
 
@@ -24,7 +21,6 @@ module.exports.reviewSchema = Joi.object({
         rating: Joi.number().required().min(1).max(5),
         comment: Joi.string().required(),
     }).required(),
-<<<<<<< HEAD
 });
 
 
@@ -36,6 +32,4 @@ module.exports.bookingSchema = Joi.object({
         .greater(Joi.ref('checkIn'))
         .required()  // checkOut date > checkIn date
     }).required()
-=======
->>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 });
