@@ -4,7 +4,10 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 // Index Route
 module.exports.index = async (req, res) => {
     let allListings = await Listing.find();
@@ -51,7 +54,10 @@ module.exports.createListing = async (req, res, next) => {
 
     // let newListing = req.body.listing; //since we made name attr keys of listing obj
     const newListing = new Listing(req.body.listing);
+<<<<<<< HEAD
     newListing.category = req.body.listing.category || null;   //if user not selected any option then store null
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
     newListing.owner = req.user._id;  // to save id of curr user (passport saves user info in req.user if he is logged-in)
     newListing.image = {url, filename};
 
@@ -86,9 +92,13 @@ module.exports.updateListing = async (req, res) => {
     // }
 
     let {id} = req.params;
+<<<<<<< HEAD
     let listing = await Listing.findById(id);
     let updatedListing = await Listing.findByIdAndUpdate(id, {...req.body.listing}, {new: true});
     updatedListing.category = req.body.listing.category || listing.category; // Retain original category if not updated
+=======
+    let updatedListing = await Listing.findByIdAndUpdate(id, {...req.body.listing}, {new: true});
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
     
     let response = await geocodingClient
     .forwardGeocode({
@@ -121,6 +131,7 @@ module.exports.deleteListing = async (req, res) => {
     console.log(deletedListing);
     req.flash("success", "Listing Deleted!");
     res.redirect("/listings");
+<<<<<<< HEAD
 };
 
 
@@ -147,3 +158,6 @@ module.exports.searchListing = async (req, res, next) => {
         next(err);
     }
 };
+=======
+};
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750

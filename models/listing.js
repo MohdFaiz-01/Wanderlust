@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const Review = require("./review.js");
+<<<<<<< HEAD
 const Booking = require("./booking.js");
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 
 const listingSchema = new mongoose.Schema({
     title: {
@@ -36,12 +39,15 @@ const listingSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+<<<<<<< HEAD
     bookings: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Booking",
         },
     ],
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
     geometry: {
         type: {
             type: String,   // Don't do `{ location: { type: String } }`
@@ -53,10 +59,13 @@ const listingSchema = new mongoose.Schema({
             required: true,
         },
     },
+<<<<<<< HEAD
     category: {
         type: String,
         enum: ["room", "iconic city", "mountain", "castle", "pool villa", "camp", "farm", "arctic", "dome", "boat"],
     },
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 });
 
 //to delete all listing reviews if listing is deleted(using mongoose-middleware[post])
@@ -64,7 +73,10 @@ const listingSchema = new mongoose.Schema({
 listingSchema.post("findOneAndDelete", async(listing) => {
     if(listing) {
         await Review.deleteMany({_id: {$in: listing.reviews}});
+<<<<<<< HEAD
         await Booking.deleteMany({_id: {$in: listing.bookings}});
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
     }
 });
 

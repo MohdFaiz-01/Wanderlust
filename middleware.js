@@ -1,9 +1,14 @@
 const Listing = require("./models/listing.js");
 const Review = require("./models/review.js");
 const ExpressError = require("./utils/ExpressError.js");
+<<<<<<< HEAD
 const { listingSchema, bookingSchema } = require("./schema.js");
 const { reviewSchema } = require("./schema.js");
 const Booking = require("./models/booking.js");
+=======
+const { listingSchema } = require("./schema.js");
+const { reviewSchema } = require("./schema.js");
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 
 
 // to check if user logged in to create,delete,update listing,etc...
@@ -52,6 +57,7 @@ module.exports.validateReview = (req, res, next) => {
 }
 
 
+<<<<<<< HEAD
 //func for validating Booking Schema (for Middleware)
 module.exports.validateBooking = (req, res, next) => {
     let {error} = bookingSchema.validate(req.body);
@@ -64,6 +70,8 @@ module.exports.validateBooking = (req, res, next) => {
 }
 
 
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 // to check if logged-in user == listing owner to edit,update,delete
 module.exports.isOwner = async(req, res, next) => {
     let {id} = req.params;
@@ -85,6 +93,7 @@ module.exports.isReviewAuthor = async(req, res, next) => {
         return res.redirect(`/listings/${id}`);
     }
     next();
+<<<<<<< HEAD
 }
 
 
@@ -97,4 +106,6 @@ module.exports.isBookingOwner = async(req, res, next) => {
         return res.redirect(`/listings/${id}`);
     }
     next();
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 }

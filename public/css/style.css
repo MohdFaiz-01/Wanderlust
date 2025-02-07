@@ -26,6 +26,7 @@ body {
     color: #222222 !important;
 }
 
+<<<<<<< HEAD
 /* Search Bar */
 
 .search-btn {
@@ -169,6 +170,8 @@ body {
     right: 0;
 }
 
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 
 /* Footer */
 
@@ -198,7 +201,10 @@ body {
 .f-info-links a {
     text-decoration: none;
     color: #222222;
+<<<<<<< HEAD
     margin-right: 0.5rem;
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 }
 
 .f-info-links a:hover {
@@ -225,8 +231,11 @@ body {
 
 p.card-text {
     font-weight: 400 !important;
+<<<<<<< HEAD
     padding-top: 0.1rem;
     padding-left: 0.3rem;
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 }
 
 .listing-link {
@@ -244,7 +253,10 @@ p.card-text {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 /* New Page */
 .add-btn {
     background-color: #fe424d !important;
@@ -253,12 +265,15 @@ p.card-text {
 
 
 /* Edit Page */
+<<<<<<< HEAD
 .edit-form div img {
     width: 50%;
     height: 20vw;
     margin-top: 0.4rem;
 }
 
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 .edit-btn {
     background-color: #fe424d !important;
     border: none !important;
@@ -274,10 +289,13 @@ p.card-text {
     display: flex;
 }
 
+<<<<<<< HEAD
 .listing-card p.card-text{
     margin-top: 0.7rem;
     margin-bottom: 0;
 }
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 
 
 
@@ -285,6 +303,7 @@ p.card-text {
 #map { 
     height: 350px;
     width: 90vh;
+<<<<<<< HEAD
 }
 
 
@@ -334,4 +353,6 @@ div.booking-info {
 .booking-info button {
     margin-top: 0.3rem;
     padding: 0.3rem 0.5rem;
+=======
+>>>>>>> 1630044c9a4d434bddc8b41f13c8c35597ca5750
 }
